@@ -1,0 +1,20 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+
+  <p ng-if="!myInfo.data">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </p>
+
+  <div ng-if="myInfo.data" class="my-info-container">
+    <img
+      ng-src="images/menu/{{myInfo.data.categoryName}}/{{myInfo.data.menuItem.short_name}}.jpg"
+      alt="{{myInfo.data.menuItem.menuItem.name}}"
+    />
+
+    <section>
+      <p>{{myInfo.data.menuItem.description}}</p>
+      <p>Name: {{myInfo.data.firstName}}  {{myInfo.data.lastName}}</p>
+      <p>Phone: {{myInfo.data.phone}}</p>
+    </section>
+  </div>
+</div>
